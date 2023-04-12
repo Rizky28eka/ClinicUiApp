@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-
-import 'widgets/UpcommingSchedule.dart';
+import 'widgets/Upcomming_Schedule.dart';
 
 class ScheduleScreen extends StatefulWidget {
-  const ScheduleScreen({super.key});
+  const ScheduleScreen({Key? key});
 
   @override
   State<ScheduleScreen> createState() => _ScheduleScreenState();
 }
 
-class _ScheduleScreenState extends State<ScheduleScreen> {int _buttonIndex = 0;
+class _ScheduleScreenState extends State<ScheduleScreen> {
+  int _buttonIndex = 0;
 
   final _scheduleWidgets = [
-    UpComingSchedule(),
+    const UpcomingSchedule(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -47,7 +48,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {int _buttonIndex = 0;
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
-                      "Upcomming",
+                      "Upcoming",
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
@@ -111,7 +112,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {int _buttonIndex = 0;
             ),
           ),
           SizedBox(height: 30),
-          _scheduleWidgets[_buttonIndex]
+          _scheduleWidgets[_buttonIndex],
         ],
       ),
     );
